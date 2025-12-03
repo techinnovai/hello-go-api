@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package hello.v1;
+
+// IMPORTANT: Your Go module path + desired gen folder + package alias
+option go_package = "github.com/techinnovai/hello-go-api/gen/hello/v1;hellov1";
+
+// A simple hello service
+service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {}
+
+message HelloResponse {
+  string message = 1;
+}
